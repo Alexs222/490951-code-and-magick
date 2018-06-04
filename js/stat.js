@@ -8,7 +8,7 @@ var GAP_VERTIKAL = 10;
 var GAP_HORISONTAL = 50;
 var GAP_SHADOW = 10;
 var BAR_HEIGHT = 150;
-var BAR_VIDTH = 40;
+var BAR_WIDTH = 40;
 var TEXT_HEIGHT = 16;
 var TEXT_GAP = 10;
 var TEXT_FONT = '16px PT Mono';
@@ -43,14 +43,14 @@ window.renderStatistics = function (ctx, players, times) {
   for (var i = 0; i < players.length; i++) {
     if (players[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-      ctx.fillRect(CLOUD_X + BAR_VIDTH + (BAR_VIDTH + GAP_HORISONTAL) * i, CLOUD_Y + CLOUD_HEIGHT - TEXT_HEIGHT - GAP_VERTIKAL, BAR_VIDTH, ((BAR_HEIGHT * times[i]) / maxTime) * (-1));
+      ctx.fillRect(CLOUD_X + BAR_WIDTH + (BAR_WIDTH + GAP_HORISONTAL) * i, CLOUD_Y + CLOUD_HEIGHT - TEXT_HEIGHT - GAP_VERTIKAL, BAR_WIDTH, ((BAR_HEIGHT * times[i]) / maxTime) * (-1));
     } else {
       ctx.fillStyle = 'rgba(10, 65, 204, ' + ((Math.floor(Math.random() * 10)) / 10);
-      ctx.fillRect(CLOUD_X + BAR_VIDTH + (BAR_VIDTH + GAP_HORISONTAL) * i, CLOUD_Y + CLOUD_HEIGHT - TEXT_HEIGHT - GAP_VERTIKAL, BAR_VIDTH, ((BAR_HEIGHT * times[i]) / maxTime) * (-1));
+      ctx.fillRect(CLOUD_X + BAR_WIDTH + (BAR_WIDTH + GAP_HORISONTAL) * i, CLOUD_Y + CLOUD_HEIGHT - TEXT_HEIGHT - GAP_VERTIKAL, BAR_WIDTH, ((BAR_HEIGHT * times[i]) / maxTime) * (-1));
     }
 
     ctx.fillStyle = '#000';
-    ctx.fillText(players[i], CLOUD_X + BAR_VIDTH + (BAR_VIDTH + GAP_HORISONTAL) * i, CLOUD_Y + CLOUD_HEIGHT - GAP_VERTIKAL);
-    ctx.fillText(Math.round(times[i]), CLOUD_X + BAR_VIDTH + (BAR_VIDTH + GAP_HORISONTAL) * i, CLOUD_Y + CLOUD_HEIGHT - GAP_VERTIKAL - ((BAR_HEIGHT * times[i]) / maxTime) - TEXT_HEIGHT - GAP_VERTIKAL);
+    ctx.fillText(players[i], CLOUD_X + BAR_WIDTH + (BAR_WIDTH + GAP_HORISONTAL) * i, CLOUD_Y + CLOUD_HEIGHT - GAP_VERTIKAL);
+    ctx.fillText(Math.round(times[i]), CLOUD_X + BAR_WIDTH + (BAR_WIDTH + GAP_HORISONTAL) * i, CLOUD_Y + CLOUD_HEIGHT - GAP_VERTIKAL - ((BAR_HEIGHT * times[i]) / maxTime) - TEXT_HEIGHT - GAP_VERTIKAL);
   }
 };
