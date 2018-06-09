@@ -13,8 +13,8 @@ var WIZARD_COLOR_COATS = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 1
 var WIZARD_LAST_NAME = ['да Мария', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 var WIZARD_COLOR_EYES = ['black', 'red', 'blue', 'yellow', 'green'];
 
-var wizards = [];
-var rendomDataGenerator = function () {
+var randomDataGenerator = function () {
+  var wizards = [];
   for (var i = 0; i < 4; i++) {
     var wizard = {
       name: WIZARD_NAMES[Math.floor(Math.random() * WIZARD_NAMES.length)] + ' ' + WIZARD_LAST_NAME[Math.floor(Math.random() * WIZARD_LAST_NAME.length)],
@@ -25,7 +25,7 @@ var rendomDataGenerator = function () {
   }
   return wizards;
 };
-rendomDataGenerator();
+// randomDataGenerator();
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
@@ -37,14 +37,14 @@ var renderWizard = function (wizard) {
 
 var createBlock = function (arrElement) {
   var fragment = document.createDocumentFragment();
-  for (var i = 0; i < wizards.length; i++) {
+  for (var i = 0; i < randomDataGenerator().length; i++) {
     var element = arrElement[i];
     fragment.appendChild(renderWizard(element));
   }
   return fragment;
 };
 
-similarListElement.appendChild(createBlock(wizards));
+similarListElement.appendChild(createBlock(randomDataGenerator()));
 
 var userDialog = document.querySelector('.setup');
 userDialog.classList.remove('hidden');
