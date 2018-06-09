@@ -34,10 +34,10 @@ var renderWizard = function (wizard) {
   return wizardElement;
 };
 
-var createBlock = function (arrElement) {
+var createBlock = function (wizards) {
   var fragment = document.createDocumentFragment();
-  for (var i = 0; i < arrElement.length; i++) {
-    var element = arrElement[i];
+  for (var i = 0; i < wizards.length; i++) {
+    var element = wizards[i];
     fragment.appendChild(renderWizard(element));
   }
   return fragment;
