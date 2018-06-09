@@ -25,7 +25,6 @@ var randomDataGenerator = function () {
   }
   return wizards;
 };
-// randomDataGenerator();
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
@@ -37,7 +36,7 @@ var renderWizard = function (wizard) {
 
 var createBlock = function (arrElement) {
   var fragment = document.createDocumentFragment();
-  for (var i = 0; i < randomDataGenerator().length; i++) {
+  for (var i = 0; i < arrElement.length; i++) {
     var element = arrElement[i];
     fragment.appendChild(renderWizard(element));
   }
